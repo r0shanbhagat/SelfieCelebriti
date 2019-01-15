@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">SelfieStar</string>
+    <string name="folder_name">SelfieStar</string>
+
+
+    <string name="label_brush">Brush</string>
+    <string name="label_emoji">Emoji</string>
+    <string name="label_sticker">Sticker</string>
+    <string name="label_eraser">Eraser</string>
+    <string name="label_text">Text</string>
+    <string name="label_filter">Filter</string>
+    <string name="label_background">Background</string>
+    <string name="label_adjust">Adjust</string>
+    <string name="fetching_images">Fetching Images</string>
+    <string name="usage_policy">All the images used under fair usage policy.If you have any concern please send email to selficelebriti@gmail.com</string>
+    <string name="choose">Choose</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="about_us">Selfie with Celebrity. Ever wanted to be with a Celebrity? Well, now you can and share it with your Friends too.\n
+ \n No Photoshop skills required, all you want is your Android mobile with a Camera.\n
+You can take Picture with Famous Celebrities / Rare or Extinct Animals and lots more..</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="no_images_found">No Images Found</string>
+
+</resources>

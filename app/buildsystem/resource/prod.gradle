@@ -1,0 +1,15 @@
+android {
+    defaultConfig {
+        //resValue("string", "app_name", "Famous Swad")
+        resValue("string", "baseUrl", "http://159.89.171.140:8090/")
+    }
+
+    buildTypes {
+        debug {
+            // applicationIdSuffix ".dev"
+        }
+        release {
+
+        }
+    }
+}

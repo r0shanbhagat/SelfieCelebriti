@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ~ Copyright (C) 2017 Jeff Gilfelt.
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~      http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
+ -->
+<resources>
+    <color name="httpCacheColorPrimary">#00BCD4</color>
+    <color name="httpCacheColorPrimaryDark">#0097A7</color>
+    <color name="httpCacheColorAccent">#FF9800</color>
+
+    <color name="httpCacheStatusDefault">#212121</color>
+    <color name="httpCacheStatusRequested">#9E9E9E</color>
+    <color name="httpCacheStatusError">#F44336</color>
+    <color name="httpCacheStatus500">#B71C1C</color>
+    <color name="httpCacheStatus400">#FF9800</color>
+    <color name="httpCacheStatus300">#0D47A1</color>
+
+    <!--calenderViewPager-->
+    <color name="blue">#5882FA</color>
+    <color name="gray">#BDBDBD</color>
+
+    <!--Number Picker Library-->
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+
+</resources>

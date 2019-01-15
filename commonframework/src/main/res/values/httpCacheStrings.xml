@@ -1,0 +1,29 @@
+<resources>
+    <string name="httpCacheName">Http Cache</string>
+    <string name="httpCacheMethod">Method</string>
+    <string name="httpCacheUrl">URL</string>
+    <string name="httpCacheClear">Clear</string>
+    <string name="httpCacheProtocol">Protocol</string>
+    <string name="httpCacheStatus">Status</string>
+    <string name="httpCacheSSL">SSL</string>
+    <string name="httpCacheRequest">Request</string>
+    <string name="httpCacheRequestTime">Request time</string>
+    <string name="httpCacheResponseTime">Response time</string>
+    <string name="httpCacheDuration">Duration</string>
+    <string name="httpCacheRequestSize">Request size</string>
+    <string name="httpCacheResponseSize">Response size</string>
+    <string name="httpCacheTotalSize">Total size</string>
+    <string name="httpCacheResponse">Response</string>
+    <string name="httpCacheYes">Yes</string>
+    <string name="httpCacheNo">No</string>
+    <string name="httpCacheBodyOmitted">(encoded or binary body omitted)</string>
+    <string name="httpCacheNotificationTitle">Recording HTTP activity</string>
+    <string name="httpCacheSearch">Search</string>
+    <string name="httpCacheBodyUnexpectedEof">\n\n--- Unexpected end of content ---</string>
+    <string name="httpCacheBodyContentTruncated">\n\n--- Content truncated ---</string>
+    <string name="httpCacheOverview">Overview</string>
+    <string name="httpCacheBrowseSqliteDatabase">Browse SQLite database</string>
+
+
+
+</resources>

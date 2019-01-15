@@ -1,0 +1,143 @@
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 10
+        versionName "1.0.0"
+        vectorDrawables.useSupportLibrary = true
+        resConfigs "en"
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        releaseProdConfig {
+             keyAlias 'selfie'
+             keyPassword 'android'
+             storePassword 'android'
+             storeFile file('./keystore/selfie.jks')
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility "${javaVersion}"
+        targetCompatibility "${javaVersion}"
+    }
+    dataBinding {
+        enabled true
+    }
+
+
+    flavorDimensions "default"
+    productFlavors {
+        setProperty()
+        uat {
+            applicationId "com.selfie.star"
+            signingConfig signingConfigs.releaseProdConfig
+        }
+        prod {
+            applicationId "com.selfie.star"
+            signingConfig signingConfigs.releaseProdConfig
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            jniDebuggable true
+            renderscriptDebuggable true
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [allowBackup: "true"]
+            buildConfigField "boolean", "LOG", "true"
+        }
+        release {
+            debuggable "${runtimeDebugEnable}".toBoolean()
+            jniDebuggable false
+            renderscriptDebuggable false
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [allowBackup: "false"]
+            buildConfigField "boolean", "LOG", "false"
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            def formattedDate = new Date().format('yyyy-MM-dd')
+            def fullName = outputFileName
+            def projectName = fullName.substring(0, fullName.indexOf('-'))
+            outputFileName = "${variant.name}-${variant.versionName}-${formattedDate}.apk"
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "8192M"
+        preDexLibraries true
+    }
+    lintOptions {
+        abortOnError false
+        quiet true
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/rxjava.properties'
+    }
+
+}
+
+def setProperty() {
+    def flavor = getCurrentFlavor()
+    if (flavor.equalsIgnoreCase("uat")) {
+        apply from: file('./buildsystem/resource/uat.gradle')
+
+    } else if (flavor.equalsIgnoreCase("prod")) {
+        apply from: file('./buildsystem/resource/prod.gradle')
+
+    }
+}
+
+def getCurrentFlavor() {
+    String taskRequestName = getGradle().getStartParameter().getTaskRequests().toString()
+    Pattern pattern
+    if (taskRequestName.contains("assemble")) {
+        pattern = Pattern.compile("assemble(\\w+)(Release|Debug)")
+    } else {
+        pattern = Pattern.compile("generate(\\w+)(Release|Debug)")
+    }
+    Matcher matcher = pattern.matcher(taskRequestName)
+    if (matcher.find()) {
+        return matcher.group(1).toLowerCase()
+    } else {
+        return ""
+    }
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':commonframework')
+    implementation project(':photoeditor')
+    implementation 'com.ss.bannerslider:bannerslider:2.0.0'
+    implementation("com.android.support:support-v4:27.1.1")
+    implementation("com.android.support:support-media-compat:27.1.1")
+    annotationProcessor "org.parceler:parceler:${rootProject.ext.parcelerVersion}"
+    implementation ("com.theartofdev.edmodo:android-image-cropper:2.8.0")
+
+
+}
+
+apply plugin: 'com.google.gms.google-services'

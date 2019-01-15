@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+apply from: file("./buildsystem/library.gradle")
+apply from: file("./buildsystem/resources.gradle")
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api "${library.app_compat}"
+    api "${library.design_compat}"
+    api "${library.cardview}"
+    api "${library.recycler}"
+    api "${library.support_constraint}"
+
+    api "${library.okhttp3}"
+    api "${library.retrofit_converter}"
+    api "${library.retrofit_adapter}"
+    api "${library.multidex}"
+    api "${library.cupborad}"
+    api "${library.glide_svg}"
+    api "${library.rxandroid}"
+    api project(path: ':trackingsystem')
+
+    api "org.parceler:parceler-api:${rootProject.ext.parcelerVersion}"
+    annotationProcessor "org.parceler:parceler:${rootProject.ext.parcelerVersion}"
+    annotationProcessor 'androidx.annotation:annotation:1.0.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+}

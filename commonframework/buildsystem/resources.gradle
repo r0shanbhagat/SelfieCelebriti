@@ -1,0 +1,25 @@
+android {
+    defaultConfig {
+        resValue "string", "ABS_PREF_FILE", 'app_pref.xml'
+
+        resValue "string", "platform", "Android"
+        resValue "string", "languageCode", "en"
+        resValue "string", "countryCode", "in"
+        resValue "string", "scheme", "https"
+        resValue "string", "FLURRY_API_KEY", "b2bd7db3cbc2538909d1bb5f333f8fe0bf0c74d0"
+
+    }
+    buildTypes {
+        debug {
+
+        }
+        release {
+
+
+        }
+    }
+
+}
+
+
+

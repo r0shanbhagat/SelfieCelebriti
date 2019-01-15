@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "966741007960",
+    "firebase_url": "https://selfiecelebrity-fefb5.firebaseio.com",
+    "project_id": "selfiecelebrity-fefb5",
+    "storage_bucket": "selfiecelebrity-fefb5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966741007960:android:47e783b5e9e65227",
+        "android_client_info": {
+          "package_name": "com.selfie.star"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966741007960-f9def4jka2flvepedlriuo3kb8csi8gt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvBnnJGQFCj_MOycYUsmwhc0sfIP6HrgM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

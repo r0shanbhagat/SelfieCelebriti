@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+
+        <variable
+            name="customDialog"
+            type="com.selfie.star.activity.CustomDialog" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dimen_thirty"
+        android:paddingTop="@dimen/dimen_twenty"
+        android:paddingRight="@dimen/dimen_thirty"
+        android:paddingBottom="@dimen/dimen_five">
+
+        <TextView
+            android:id="@+id/tvChoose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_ten"
+            android:text="@string/choose"
+            android:textColor="@color/colorAccent" />
+
+        <RelativeLayout
+            android:id="@+id/rlParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvChoose">
+
+            <TextView
+                android:id="@+id/tvCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:drawableLeft="@drawable/ic_camera"
+                android:drawablePadding="@dimen/dimen_fifteen"
+                android:gravity="center_vertical"
+                android:onClick="@{(v)->customDialog.onClick(v)}"
+                android:padding="@dimen/dimen_twenty"
+                android:text="Camera"
+                android:textColor="@color/colorBlack" />
+
+            <TextView
+                android:id="@+id/tvGallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:drawableLeft="@drawable/ic_gallery"
+                android:drawablePadding="@dimen/dimen_fifteen"
+                android:gravity="center_vertical"
+                android:onClick="@{(v)->customDialog.onClick(v)}"
+                android:padding="@dimen/dimen_twenty"
+                android:text="Gallery"
+                android:textColor="@color/colorBlack" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlParent"
+            android:layout_alignParentRight="true"
+            android:onClick="@{(v)->customDialog.onClick(v)}"
+            android:padding="@dimen/dimen_twenty"
+            android:text="Cancel"
+            android:textColor="@color/colorBlack" />
+
+
+    </RelativeLayout>
+
+</layout>

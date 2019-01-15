@@ -1,0 +1,13 @@
+<resources>
+    <string name="rupeeSign">\u20B9</string>
+    <string name="rupee_symbol">\u20B9&#160;</string>
+    <string name="search_hint">Search</string>
+    <string name="no_data_found">No data found</string>
+
+    <!--play store-->
+    <string name="app_google_play_store_link">"https://play.google.com/store/apps/details?id="</string>
+    <string name="app_market_link">"market://details?id="</string>
+    <string name="error_msg">Oops! Something went wrong. Possibly with your Network connection. Please try again.</string>
+
+    <string name="tag">Tag</string>
+</resources>
